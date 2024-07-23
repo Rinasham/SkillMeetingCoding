@@ -37,9 +37,9 @@ button.addEventListener("click", function () {
       cookies += 1;
       // クッキーが1枚の時は単数系「cookie」、２枚以上なら複数形「cookies」で分岐
       if (cookies == 1) {
-        howManyCookies.textContent = `${cookies} cookie 持っています.`;
+        howManyCookies.textContent = `${cookies} cookie 持っています`;
       } else {
-        howManyCookies.textContent = `${cookies} cookies 持っています.`;
+        howManyCookies.textContent = `${cookies} cookies 持っています`;
       }
     });
   }
