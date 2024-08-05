@@ -7,8 +7,8 @@ let cookieButton = false;
 button.addEventListener("click", function () {
   // 押されるたびにカウンターに表示される数字を１ずつ増やす
   counterNum += 1;
-  let result = document.getElementById("result");
-  result.textContent = `今 ${counterNum} クリックです`;
+  let counter = document.getElementById("counter");
+  counter.textContent = `${counterNum} カウント`;
 
   // カウンターの数字が５に増えた時の処理
   if (counterNum == 5) {
@@ -22,8 +22,8 @@ button.addEventListener("click", function () {
     }
     // 「クッキーを買う」ボタンが既に存在している場合
     let cookies = 0;
-    const howManyCookies = document.createElement("p"); // pタグの要素を作成
-    document.body.appendChild(howManyCookies); // HTML上に追加
+    const cookieNum = document.createElement("p"); // pタグの要素を作成
+    document.body.appendChild(cookieNum); // HTMLに要素を追加
 
     // 「クッキーを買う」ボタンを押した時に発火
     newButton.addEventListener("click", function () {
@@ -33,14 +33,10 @@ button.addEventListener("click", function () {
       }
       // カウンターの数字を -5 する
       counterNum -= 5;
-      result.textContent = `今 ${counterNum} クリックです`;
+      counter.textContent = `${counterNum} カウント`;
       cookies += 1;
-      // クッキーが1枚の時は単数系「cookie」、２枚以上なら複数形「cookies」で分岐
-      if (cookies == 1) {
-        howManyCookies.textContent = `${cookies} cookie 持っています`;
-      } else {
-        howManyCookies.textContent = `${cookies} cookies 持っています`;
-      }
+      // HTML上のクッキーの枚数を書き換え
+      cookieNum.textContent = `${cookies} クッキー`;
     });
   }
 });
